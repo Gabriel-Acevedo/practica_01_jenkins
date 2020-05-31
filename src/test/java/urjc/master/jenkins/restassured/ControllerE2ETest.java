@@ -34,7 +34,7 @@ public class ControllerE2ETest {
 	public void createPost() throws Exception {
 
 		AtomicLong lastPostId = new AtomicLong();
-		Post post = new Post("Post Test", "Content Test");
+		Post post = new Post("Second Test", "Creating post with E2ETest.");
 		post.setId(lastPostId.incrementAndGet());
 		
 		System.out.print(objectMapper.writeValueAsString(post) + "_" + post.getContent() + "_");
@@ -46,8 +46,8 @@ public class ControllerE2ETest {
 			post("/post").
 		then().
 			statusCode(201).
-			body("title", equalTo("Post Test")).
-			body("content", equalTo("Content Test"));
+			body("title", equalTo("Second Test")).
+			body("content", equalTo("Creating post with E2ETest."));
 	}
 	
 }

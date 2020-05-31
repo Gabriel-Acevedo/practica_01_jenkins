@@ -13,8 +13,8 @@ public class ControllerUnitTest {
 	@Test
 	public void createPost() throws Exception {
 
-		Post post = new Post("Post Test", "Content");
-		assertEquals(post.getTitle(),"Post Test");
+		Post post = new Post("Third Test", "Creating a post with UnitTest.");
+		assertEquals(post.getTitle(),"Third Test");
 	}
 	
 }

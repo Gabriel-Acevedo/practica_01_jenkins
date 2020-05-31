@@ -35,13 +35,13 @@ public class ControllerIntegrationTest {
 	public void createPost() throws Exception {
 
 		AtomicLong lastPostId = new AtomicLong();
-		Post post = new Post("Post Test", "Content");
+		Post post = new Post("First Post", "Testing post with Integration Test.");
 		post.setId(lastPostId.incrementAndGet());
 
 		mvc.perform(post("/post").contentType(MediaType.APPLICATION_JSON)
 				.content(objectMapper.writeValueAsString(post))).andExpect(status().isCreated());
 		mvc.perform(get("/post/" + post.getId()).contentType(MediaType.APPLICATION_JSON)).andExpect(status().isOk())
-				.andExpect(jsonPath("$.title", equalTo("Post Test")));
+				.andExpect(jsonPath("$.title", equalTo("First Post")));
 	}
 
 }
