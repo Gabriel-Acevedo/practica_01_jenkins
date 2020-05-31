@@ -13,7 +13,7 @@ import com.fasterxml.jackson.annotation.JsonView;
 @Entity
 public class Comment{
 	
-	public interface Elemental {
+	public interface Standard {
 	}
 
 	public interface PostAtt {
@@ -38,14 +38,14 @@ public class Comment{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@JsonView(Elemental.class)
+	@JsonView(Standard.class)
 	private long id;
 
 	@OneToOne
-	@JsonView(Elemental.class)
+	@JsonView(Standard.class)
 	private Author author;
 	
-	@JsonView(Elemental.class)
+	@JsonView(Standard.class)
 	private String comment;
 	
 	@ManyToOne

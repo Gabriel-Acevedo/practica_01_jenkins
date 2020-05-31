@@ -15,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonView;
 @Entity
 public class Post {
 	
-	public interface Elemental {
+	public interface Standard {
 	}
 
 	public interface CommentAtt {
@@ -23,13 +23,13 @@ public class Post {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@JsonView(Elemental.class)
+	@JsonView(Standard.class)
 	private long id;
 		
-	@JsonView(Elemental.class)
+	@JsonView(Standard.class)
 	private String title;
 	
-	@JsonView(Elemental.class)
+	@JsonView(Standard.class)
 	private String content;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="post")

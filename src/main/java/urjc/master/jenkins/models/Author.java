@@ -7,17 +7,17 @@ import javax.persistence.Id;
 
 import com.fasterxml.jackson.annotation.JsonView;
 
-import urjc.master.jenkins.models.Post.Elemental;
+import urjc.master.jenkins.models.Post.Standard;
 
 @Entity
 public class Author {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@JsonView(Elemental.class)
+	@JsonView(Standard.class)
 	private long id;
 
-	@JsonView(Elemental.class)
+	@JsonView(Standard.class)
 	private String name;
 	
 	private int age;

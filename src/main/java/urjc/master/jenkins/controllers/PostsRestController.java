@@ -39,22 +39,22 @@ public class PostsRestController {
 	
 	@PostConstruct
 	public void init() {
-		postRepository.save(new Post("Games", "Best videogames ever"));
-		postRepository.save(new Post("News", "Breaking news"));
+		postRepository.save(new Post("Manga", "Top 10 Fantasy Mangas to read."));
+		postRepository.save(new Post("Anime", "New Animes for the 2020 Summer Season."));
 		
 		// save a Post
-		Author a1 = new Author("Alfredo",25);
+		Author a1 = new Author("Joseph",19);
 		authorRepository.save(a1);
-		Author a2 = new Author("Gumersindo",30);
+		Author a2 = new Author("Cecile",26);
 		authorRepository.save(a2);
 
-		Post p1 = new Post("New Post", "Test post");
+		Post p1 = new Post("Creating a new Post", "New Post created.");
 		postRepository.save(p1);
 		
-		Comment c1 = new Comment(a1,"First Comment");
+		Comment c1 = new Comment(a1,"This is the first Comment");
 		c1.setPost(p1);
 		commentRepository.save(c1);
-		Comment c2 = new Comment(a2,"Second Comment");
+		Comment c2 = new Comment(a2,"This is the second Comment");
 		c2.setPost(p1);
 		commentRepository.save(c2);
 		
@@ -62,9 +62,9 @@ public class PostsRestController {
 		p1.addComment(c2);	
 	}
 
-	interface PostListView extends Post.Elemental, Post.CommentAtt, Comment.Elemental {}
+	interface PostListView extends Post.Standard, Post.CommentAtt, Comment.Standard {}
 
-	interface CommentView extends Comment.Elemental, Comment.PostAtt, Post.Elemental {}
+	interface CommentView extends Comment.Standard, Comment.PostAtt, Post.Standard {}
 
 	@JsonView(PostListView.class)
 	@GetMapping("/posts")
@@ -120,23 +120,6 @@ public class PostsRestController {
 		return new ResponseEntity<>(comment, HttpStatus.OK);
 	}
 
-/*
-	@JsonView(CommentView.class)
-	@PostMapping("/post/{id}/new_comment")
-	public Comment newComment(@PathVariable int id, @RequestBody Comment comment) {
-		
-		commentRepository.save(comment);
-		
-		Optional<Post> p = postRepository.findById((long)id);
-		
-		Post post = p.get();
-		comment.setPost(post);
-		post.addComment(comment);
-		postRepository.save(post);
-		
-		return comment;
-	}
-*/
 	
 	@JsonView(CommentView.class)
 	@PostMapping("/post/{id}/new_comment/{authorId}")
