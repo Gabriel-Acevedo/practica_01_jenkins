@@ -1,7 +1,7 @@
 node {
     def mvnHome = tool 'M3'
     stage("Preparation"){
-        git 'https://github.com/Rubru94/practTema15.git'
+        git 'https://github.com/Gabriel-Acevedo/practica_01_jenkins.git'
     }
     stage("Create app"){
         sh "docker-compose build"
