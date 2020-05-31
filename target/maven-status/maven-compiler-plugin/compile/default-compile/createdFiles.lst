@@ -1,0 +1,17 @@
+ruben/practTema15/Post$Elemental.class
+ruben/practTema15/Comment.class
+ruben/practTema15/User.class
+ruben/practTema15/Application.class
+ruben/practTema15/Post$CommentAtt.class
+ruben/practTema15/PostsRestController$CommentView.class
+ruben/practTema15/PostsService.class
+ruben/practTema15/CommentRepository.class
+ruben/practTema15/Post.class
+ruben/practTema15/Author.class
+ruben/practTema15/Comment$Elemental.class
+ruben/practTema15/PostsRestController$PostListView.class
+ruben/practTema15/AuthorRepository.class
+ruben/practTema15/Comment$PostAtt.class
+ruben/practTema15/PostRepository.class
+ruben/practTema15/PostsRestController.class
+ruben/practTema15/RestControllerExceptionHandler.class
