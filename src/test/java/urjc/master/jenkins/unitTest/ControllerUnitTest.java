@@ -14,7 +14,7 @@ public class ControllerUnitTest {
 	public void createPost() throws Exception {
 
 		Post post = new Post("Third Test", "Creating a post with UnitTest.");
-		assertEquals(post.getTitle(),"Third Test");
+		assertEquals("Third Test",post.getTitle());
 	}
 	
 }
