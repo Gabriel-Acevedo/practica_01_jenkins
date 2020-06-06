@@ -42,8 +42,6 @@ public class Post {
 
 	public Post(String title, String content) {
 		super();
-		//List<Comment> comments = new ArrayList<>();
-		//comments.add(new Comment(new Author("Me",25),"First Comment"));
 		this.title = title;
 		this.content = content;
 		this.comments = new ArrayList<>(); 
