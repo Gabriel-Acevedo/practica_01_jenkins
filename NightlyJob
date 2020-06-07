@@ -14,11 +14,11 @@ node {
     }
 
     stage("Integration Test"){
-        sh "sleep 15;  mvn test -Dtest=ControllerIntegrationTest;"
+        sh "sleep 30;  mvn test -Dtest=ControllerIntegrationTest;"
     }
 
     stage("E2E Test"){
-        sh "sleep 15; mvn test -Dtest=ControllerE2ETest"
+        sh "sleep 30; mvn test -Dtest=ControllerE2ETest"
     }
 
     stage("Application Analysis with Sonarqube") {
@@ -45,14 +45,13 @@ node {
         sh "docker build -t ggordo2019/practica_01_jenkins:latest ."
     }
 
+    /*
     stage('Push image to DockerHub') {
         def myimage = docker.image('ggordo2019/practica_01_jenkins:latest')
-        withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'docker-hub',
-        usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
-        sh 'echo $USERNAME'
-        sh 'echo $PASSWORD'
-        sh 'docker login -u "$USERNAME" -p "$PASSWORD"'
-        myimage.push()
+        withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'docker-hub',usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
+            sh 'docker login -u "$USERNAME" -p "$PASSWORD"'
+            myimage.push()
         }
     } 
+    */
 }
