@@ -10,10 +10,10 @@ node {
         sh "docker-compose up -d"
     }
     stage("Unit Test"){
-        sh "sleep 5; mvn test -Dtest=ControllerUnitTest"
+        sh "sleep 15; mvn test -Dtest=ControllerUnitTest"
     }
     stage("E2E Test"){
-        sh "sleep 5;  mvn test -Dtest=ControllerIntegrationTest; mvn test -Dtest=ControllerE2ETest"
+        sh "sleep 15;  mvn test -Dtest=ControllerIntegrationTest; mvn test -Dtest=ControllerE2ETest"
     }
     stage("Post"){
 
