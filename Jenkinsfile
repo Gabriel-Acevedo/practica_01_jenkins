@@ -6,7 +6,7 @@ node {
     stage("Create app"){
         sh "docker-compose build"
     }
-    stage("Start app"){
+    stage("Run app"){
         sh "docker-compose up -d"
     }
     stage("Unit Test"){

@@ -1,0 +1,51 @@
+node {
+    def mvnHome = tool 'M3'
+    
+    stage("Preparation"){
+        git 'https://github.com/Gabriel-Acevedo/practica_01_jenkins.git'
+    }
+
+    stage("Create app"){
+        sh "docker-compose build"
+    }
+
+    stage("Run app"){
+        sh "docker-compose up -d"
+    }
+
+    stage("Integration Test"){
+        sh "sleep 5;  mvn test -Dtest=ControllerIntegrationTest;"
+    }
+
+    stage("E2E Test"){
+        sh "sleep 5; mvn test -Dtest=ControllerE2ETest"
+    }
+
+    stage("Application Analysis with Sonarqube") {
+        sh "mvn verify sonar:sonar"
+    }
+
+    stage("Post"){
+
+        sh "docker-compose logs"
+        sh "docker-compose logs > all-logs.txt"
+        archiveArtifacts "all-logs.txt"
+
+        sh "docker-compose logs application > application-logs.txt"
+        archiveArtifacts "application-logs.txt"
+
+        sh "docker-compose logs mysqldb > mysqldb-logs.txt"
+        archiveArtifacts "mysqldb-logs.txt"
+
+        sh "sleep 5; docker-compose down"
+        junit '**/target/surefire-reports/*.xml'
+    }
+
+    stage('Build image Docker') {
+        sh "docker build -t ggordo2019/practica_01_jenkins:${dockerTag} ."
+    }
+
+    stage('Push image to DockerHub') {
+        sh "docker push ggordo2019/practica_01_jenkins"
+    } 
+}
