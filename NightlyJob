@@ -14,11 +14,11 @@ node {
     }
 
     stage("Integration Test"){
-        sh "sleep 5;  mvn test -Dtest=ControllerIntegrationTest;"
+        sh "sleep 15;  mvn test -Dtest=ControllerIntegrationTest;"
     }
 
     stage("E2E Test"){
-        sh "sleep 5; mvn test -Dtest=ControllerE2ETest"
+        sh "sleep 15; mvn test -Dtest=ControllerE2ETest"
     }
 
     stage("Application Analysis with Sonarqube") {
