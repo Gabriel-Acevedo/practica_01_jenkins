@@ -18,6 +18,10 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
+		<sonar.projectKey>Gabriel-Acevedo_practica_01_jenkins</sonar.projectKey>
+		<sonar.organization>gabriel-acevedo</sonar.organization>
+		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+		<sonar.login>4922490200e7c1a864ea13dd480fd65feab92404</sonar.login>
 	</properties>
 
 	<dependencies>
