@@ -3,7 +3,7 @@ node {
     stage("Preparation"){
         git 'https://github.com/Gabriel-Acevedo/practica_01_jenkins.git'
     }
-    stage("Create app"){
+    stage("Build app"){
         sh "docker-compose build"
     }
     stage("Run app"){

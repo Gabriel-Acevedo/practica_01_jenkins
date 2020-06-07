@@ -5,7 +5,7 @@ node {
         git 'https://github.com/Gabriel-Acevedo/practica_01_jenkins.git'
     }
 
-    stage("Create app"){
+    stage("Build app"){
         sh "docker-compose build"
     }
 
@@ -49,6 +49,8 @@ node {
         def myimage = docker.image('ggordo2019/practica_01_jenkins:latest')
         withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'docker-hub',
         usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
+        sh 'echo $USERNAME'
+        sh 'echo $PASSWORD'
         sh 'docker login -u "$USERNAME" -p "$PASSWORD"'
         myimage.push()
         }
