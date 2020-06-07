@@ -1,0 +1,6 @@
+projectKey=gabriel:practica_jenkins
+serverUrl=http://localhost:9000
+serverVersion=8.3.1.34397
+dashboardUrl=http://localhost:9000/dashboard?id=gabriel%3Apractica_jenkins
+ceTaskId=AXKKJPyX9mkYivAR4teK
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AXKKJPyX9mkYivAR4teK

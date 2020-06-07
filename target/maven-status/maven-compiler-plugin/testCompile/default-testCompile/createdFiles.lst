@@ -1,0 +1,3 @@
+urjc/master/jenkins/restassured/ControllerE2ETest.class
+urjc/master/jenkins/unitTest/ControllerUnitTest.class
+urjc/master/jenkins/mockmvc/ControllerIntegrationTest.class

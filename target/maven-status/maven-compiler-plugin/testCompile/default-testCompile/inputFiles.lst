@@ -1,3 +1,3 @@
-/home/acevedo/Escritorio/Master URJC/Ejercicios/15.- Integración y entrega continua/repoGit_practTema15/src/test/java/ruben/practTema15/restassured/ControllerE2ETest.java
-/home/acevedo/Escritorio/Master URJC/Ejercicios/15.- Integración y entrega continua/repoGit_practTema15/src/test/java/ruben/practTema15/mockmvc/ControllerIntegrationTest.java
-/home/acevedo/Escritorio/Master URJC/Ejercicios/15.- Integración y entrega continua/repoGit_practTema15/src/test/java/ruben/practTema15/unitTest/ControllerUnitTest.java
+/home/gabriel/Documentos/Master/3. Integracion y entrega continua/Practicas/Ejemplos/sonartest/practica_01_jenkins/src/test/java/urjc/master/jenkins/restassured/ControllerE2ETest.java
+/home/gabriel/Documentos/Master/3. Integracion y entrega continua/Practicas/Ejemplos/sonartest/practica_01_jenkins/src/test/java/urjc/master/jenkins/mockmvc/ControllerIntegrationTest.java
+/home/gabriel/Documentos/Master/3. Integracion y entrega continua/Practicas/Ejemplos/sonartest/practica_01_jenkins/src/test/java/urjc/master/jenkins/unitTest/ControllerUnitTest.java

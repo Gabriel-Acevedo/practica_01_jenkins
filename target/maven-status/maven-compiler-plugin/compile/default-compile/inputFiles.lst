@@ -1,11 +1,10 @@
-/home/acevedo/Escritorio/Master URJC/Ejercicios/15.- Integración y entrega continua/repoGit_practTema15/src/main/java/ruben/practTema15/Post.java
-/home/acevedo/Escritorio/Master URJC/Ejercicios/15.- Integración y entrega continua/repoGit_practTema15/src/main/java/ruben/practTema15/PostsService.java
-/home/acevedo/Escritorio/Master URJC/Ejercicios/15.- Integración y entrega continua/repoGit_practTema15/src/main/java/ruben/practTema15/Author.java
-/home/acevedo/Escritorio/Master URJC/Ejercicios/15.- Integración y entrega continua/repoGit_practTema15/src/main/java/ruben/practTema15/Comment.java
-/home/acevedo/Escritorio/Master URJC/Ejercicios/15.- Integración y entrega continua/repoGit_practTema15/src/main/java/ruben/practTema15/RestControllerExceptionHandler.java
-/home/acevedo/Escritorio/Master URJC/Ejercicios/15.- Integración y entrega continua/repoGit_practTema15/src/main/java/ruben/practTema15/AuthorRepository.java
-/home/acevedo/Escritorio/Master URJC/Ejercicios/15.- Integración y entrega continua/repoGit_practTema15/src/main/java/ruben/practTema15/PostsRestController.java
-/home/acevedo/Escritorio/Master URJC/Ejercicios/15.- Integración y entrega continua/repoGit_practTema15/src/main/java/ruben/practTema15/CommentRepository.java
-/home/acevedo/Escritorio/Master URJC/Ejercicios/15.- Integración y entrega continua/repoGit_practTema15/src/main/java/ruben/practTema15/User.java
-/home/acevedo/Escritorio/Master URJC/Ejercicios/15.- Integración y entrega continua/repoGit_practTema15/src/main/java/ruben/practTema15/Application.java
-/home/acevedo/Escritorio/Master URJC/Ejercicios/15.- Integración y entrega continua/repoGit_practTema15/src/main/java/ruben/practTema15/PostRepository.java
+/home/gabriel/Documentos/Master/3. Integracion y entrega continua/Practicas/Ejemplos/sonartest/practica_01_jenkins/src/main/java/urjc/master/jenkins/repositories/PostRepository.java
+/home/gabriel/Documentos/Master/3. Integracion y entrega continua/Practicas/Ejemplos/sonartest/practica_01_jenkins/src/main/java/urjc/master/jenkins/models/Post.java
+/home/gabriel/Documentos/Master/3. Integracion y entrega continua/Practicas/Ejemplos/sonartest/practica_01_jenkins/src/main/java/urjc/master/jenkins/controllers/PostsRestController.java
+/home/gabriel/Documentos/Master/3. Integracion y entrega continua/Practicas/Ejemplos/sonartest/practica_01_jenkins/src/main/java/urjc/master/jenkins/models/Author.java
+/home/gabriel/Documentos/Master/3. Integracion y entrega continua/Practicas/Ejemplos/sonartest/practica_01_jenkins/src/main/java/urjc/master/jenkins/repositories/CommentRepository.java
+/home/gabriel/Documentos/Master/3. Integracion y entrega continua/Practicas/Ejemplos/sonartest/practica_01_jenkins/src/main/java/urjc/master/jenkins/models/User.java
+/home/gabriel/Documentos/Master/3. Integracion y entrega continua/Practicas/Ejemplos/sonartest/practica_01_jenkins/src/main/java/urjc/master/jenkins/repositories/AuthorRepository.java
+/home/gabriel/Documentos/Master/3. Integracion y entrega continua/Practicas/Ejemplos/sonartest/practica_01_jenkins/src/main/java/urjc/master/jenkins/controllers/RestControllerExceptionHandler.java
+/home/gabriel/Documentos/Master/3. Integracion y entrega continua/Practicas/Ejemplos/sonartest/practica_01_jenkins/src/main/java/urjc/master/jenkins/Application.java
+/home/gabriel/Documentos/Master/3. Integracion y entrega continua/Practicas/Ejemplos/sonartest/practica_01_jenkins/src/main/java/urjc/master/jenkins/models/Comment.java

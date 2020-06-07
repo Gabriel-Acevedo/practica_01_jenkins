@@ -30,4 +30,10 @@ node {
         sh "docker-compose down"
         junit '**/target/surefire-reports/*.xml'
     }
+    stage("Create executable jar"){
+        sh "'${mvnHome}/bin/mvn' clean package -DskipTests"
+    }
+    stage("Save Java File"){
+       archiveArtifacts "**/target/*.jar" 
+    }
 }
