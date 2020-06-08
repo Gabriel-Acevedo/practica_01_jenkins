@@ -21,7 +21,7 @@ node {
         sh "sleep 30; mvn test -Dtest=ControllerE2ETest"
     }
 
-    stage("Application Analysis with Sonarqube") {
+    stage("Application Analysis with SonarCloud") {
         sh "mvn verify sonar:sonar"
     }
 
@@ -42,11 +42,11 @@ node {
     }
 
     stage('Build image Docker') {
-        sh "docker build -t ggordo2019/practica_01_jenkins:latest ."
+        sh "docker build -t ggordo2019/practica_01_jenkins:${TAGDocker} ."
     }
 
     stage('Push image to DockerHub') {
-        def myimage = docker.image('ggordo2019/practica_01_jenkins:latest')
+        def myimage = docker.image('ggordo2019/practica_01_jenkins:${TAGDocker}')
         withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'docker-hub',usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
             sh 'docker login -u "$USERNAME" -p "$PASSWORD"'
             myimage.push()
