@@ -45,7 +45,6 @@ node {
         sh "docker build -t ggordo2019/practica_01_jenkins:latest ."
     }
 
-    /*
     stage('Push image to DockerHub') {
         def myimage = docker.image('ggordo2019/practica_01_jenkins:latest')
         withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'docker-hub',usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
@@ -53,5 +52,5 @@ node {
             myimage.push()
         }
     } 
-    */
+    
 }
