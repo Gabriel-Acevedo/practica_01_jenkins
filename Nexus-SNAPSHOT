@@ -6,11 +6,6 @@ node {
       git 'https://github.com/Gabriel-Acevedo/practica_01_jenkins.git'
    }
 
-   stage ('Change TAG of Version') {
-      sh "chmod +x -R ./changeTag.sh"
-      sh "./changeTag.sh ${TAG} pom.xml"
-   }
-
    stage ("Build Java") {
 
       docker.image('maven').inside('-v $HOME/.m2:/root/.m2') {
@@ -21,7 +16,6 @@ node {
    stage ("Getting pom version for SNAPSHOT"){
        pom = readMavenPom file: 'pom.xml'
        pomVersion = pom.version
-       sh "echo ${pomVersion}"
    }
 
    stage ("Publish SNAPSHOT on Nexus") {
