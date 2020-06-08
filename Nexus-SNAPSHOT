@@ -1,0 +1,53 @@
+node {
+
+   def pomVersion
+
+   stage ("Preparation") {
+      git 'https://github.com/Gabriel-Acevedo/practica_01_jenkins.git'
+   }
+
+   stage ('Change TAG of Version') {
+      sh "chmod +x -R ./changeTag.sh"
+      sh "./changeTag.sh ${TAG} pom.xml"
+   }
+
+   stage ("Build Java") {
+
+      docker.image('maven').inside('-v $HOME/.m2:/root/.m2') {
+        sh "mvn clean package -DskipTests"
+      }
+   }
+
+   stage ("Getting pom version for SNAPHOT"){
+       pom = readMavenPom file: 'pom.xml'
+       pomVersion = pom.version
+       sh "echo ${pomVersion}"
+   }
+
+   stage ("Publish SNAPSHOT on Nexus") {
+     nexusPublisher nexusInstanceId: 'localNexus', 
+     nexusRepositoryId: 'mvn-snapshots', 
+     packages: 
+        [
+            [
+                $class: 'MavenPackage', 
+                mavenAssetList: 
+                    [
+                        [
+                            classifier: '', 
+                            extension: '', 
+                            filePath: "target/practica_01_jenkins-${pomVersion}.jar"
+                        ]
+                    ], 
+                mavenCoordinate: 
+                    [
+                        artifactId: 'practica_01_jenkins', 
+                        groupId: 'gabriel', 
+                        packaging: 'jar', 
+                        version: '${TAG}'
+                    ]
+            ]
+        ]
+   }
+
+}
