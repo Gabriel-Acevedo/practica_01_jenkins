@@ -13,7 +13,7 @@ node {
       }
    }
 
-   stage ("Getting pom version for SNAPSHOT"){
+   stage ("Getting pom version for RELEASE"){
        pom = readMavenPom file: 'pom.xml'
        pomVersion = pom.version
    }
