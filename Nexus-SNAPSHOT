@@ -18,7 +18,7 @@ node {
        pomVersion = pom.version
    }
 
-   stage ("Publish SNAPSHOT on Nexus") {
+   stage("Publish SNAPSHOT on Nexus") {
      nexusPublisher nexusInstanceId: 'localNexus', 
      nexusRepositoryId: 'mvn-snapshots', 
      packages: 
@@ -38,7 +38,7 @@ node {
                         artifactId: 'practica_01_jenkins', 
                         groupId: 'gabriel', 
                         packaging: 'jar', 
-                        version: '${TAG}'
+                        version: '$TAG}'
                     ]
             ]
         ]
