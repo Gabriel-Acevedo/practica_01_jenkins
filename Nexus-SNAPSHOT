@@ -38,7 +38,7 @@ node {
                         artifactId: 'practica_01_jenkins', 
                         groupId: 'gabriel', 
                         packaging: 'jar', 
-                        version: '$TAG}'
+                        version: '$TAGSnapshot}'
                     ]
             ]
         ]
